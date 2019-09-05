@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <h2>Create Genre</h2>
+    <%= render 'shared/errors', resource: @genre %>
+    <div class="col-md-8 col-md-offset-2">
+      <%= form_for @genre, url: genres_path(@genre), method: :post, html: {class: "form-horizontal form-genre", role: "form"} do |f| %>
+        <div class="form-group">
+          <%= f.label :genre_name, class: "control-label col-sm-2" %>
+          <div class="col-sm-8">
+            <%= f.text_field :genre_name, class: "form-control", placeholder: "Type name of genre..." %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :content, class: "control-label col-sm-2" %>
+          <div class="col-sm-10">
+            <%= f.text_area :content, class: "form-control", rows: 5, placeholder: "Content... " %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= f.submit class: "btn btn-create pull-right" %>
+            <%= link_to "Back", root_path , class: "btn btn-default"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
