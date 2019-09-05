@@ -1,5 +1,8 @@
 class AnimesController < ApplicationController
 
+  def index
+    @animes = Anime.includes(:genres)
+  end
   def new
     @anime = Anime.new
   end
