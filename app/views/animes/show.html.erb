@@ -11,6 +11,16 @@
         <p class="anime-title"> <%= @anime.title %> </p>
         <p class="anime-summary"><strong>Summary:</strong> <%= @anime.information %></p>
       </div>
+      <div class="anime-characters">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="character-header"> Characters
+              <span class="badge badge-character"><%= @anime.characters.size %></span>
+              <%= link_to "insert new character", new_anime_character_path(@anime), class: "btn btn-character" %>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

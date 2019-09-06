@@ -29,3 +29,30 @@
   border-width: 1px !important;
 }
 
+.anime-characters{
+  padding-top: 30px;
+  align-content: center;
+  .character-header {
+    font-size: 25px;
+    text-align: center;
+    .btn-character{
+      font-size: 12px;
+      border-color: dodgerblue;
+      color: dodgerblue;
+    }
+    .btn-character:hover{
+      background-color: dodgerblue;
+      color: #EFEFEF;
+    }
+    .badge-character{
+      font-size: 12px;
+      background-color: #730E15;
+    }
+  }
+}
+
+.thumbnail-index{
+  width: 250px;
+  height: 455px;
+  overflow: auto;
+}

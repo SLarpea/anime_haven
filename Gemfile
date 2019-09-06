@@ -22,6 +22,8 @@ gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 gem 'devise'
 gem 'active_storage_validations'
+gem 'mini_magick', '>= 4.9.5'
+gem 'image_processing'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
