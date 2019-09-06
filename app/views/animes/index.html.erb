@@ -2,11 +2,20 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2> Anime List </h2>
-      <% @animes.each do |anime| %>
-        Anime Name: <%= anime.title %><br/>
-        Summary: <%= anime.information %><br/>
-        Image: <%= image_tag anime.image %>
-      <% end %>
+      <div class="row>">
+        <% @animes.each do |anime| %>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <%= image_tag anime.image %>
+              <div class="caption">
+                <h4><%= anime.title %></h4>
+                <p><%= anime.information %></p>
+                <p><a><%= link_to 'Show More', anime_path(anime), class: "btn btn-show-anime" %></a></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
