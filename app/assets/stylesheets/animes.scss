@@ -11,3 +11,21 @@
   background-color: limegreen !important;
   color: #EFEFEF !important;
 }
+
+.anime{
+  padding-top: 10px;
+  .anime-title {
+    font-size: 25px;
+    font-style: normal;
+  }
+  .anime-summary {
+    padding-top: 5px;
+    font-family: Verdana, Geneva, sans-serif;
+  }
+}
+
+.anime-header{
+  border-bottom-style: solid !important;
+  border-width: 1px !important;
+}
+

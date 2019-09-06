@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_074924) do
+ActiveRecord::Schema.define(version: 2019_09_06_030142) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(version: 2019_09_05_074924) do
     t.text "information"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "character_name"
+    t.text "character_description"
+    t.text "appearance"
+    t.string "role"
+    t.integer "anime_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anime_id"], name: "index_characters_on_anime_id"
   end
 
   create_table "genres", force: :cascade do |t|

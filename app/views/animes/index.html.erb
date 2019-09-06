@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2> Anime List </h2>
+      <%= paginate @animes %>
       <div class="row>">
         <% @animes.each do |anime| %>
           <div class="col-sm-6 col-md-4">

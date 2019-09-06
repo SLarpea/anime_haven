@@ -1,8 +1,13 @@
 class AnimesController < ApplicationController
 
   def index
-    @animes = Anime.includes(:genres)
+    @animes = Anime.includes(:genres).page(params[:page])
   end
+
+  def show
+    @anime = Anime.find(params[:id])
+  end
+
   def new
     @anime = Anime.new
   end
