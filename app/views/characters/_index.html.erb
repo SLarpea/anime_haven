@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p class="main_character_header"> Main Character </p>
+      <% maincharacter = main_character(characters) %>
+      <% maincharacter.each do |character| %>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <div class="card">
+              <%= image_tag(character.avatar, size: "75x75", class: "character_avatar") %>
+              <p class="character_name"> <%= character.character_name %> </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <% sidecharacter = side_character(characters) %>
+      <p class="side_character_header"> <%= "Side Character".pluralize(sidecharacter.size) %></p>
+      <% sidecharacter.each do |character| %>
+        <div class="card">
+          <%= image_tag(character.avatar, size: "75x75", class: "character_avatar") %>
+          <p class="character_name"> <%= character.character_name %> </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+
+  </div>
+</div>

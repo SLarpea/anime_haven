@@ -18,6 +18,7 @@
               <span class="badge badge-character"><%= @anime.characters.size %></span>
               <%= link_to "insert new character", new_anime_character_path(@anime), class: "btn btn-character" %>
             </p>
+            <%= render 'characters/index', characters: @anime.characters %>
           </div>
         </div>
       </div>

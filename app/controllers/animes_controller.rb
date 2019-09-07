@@ -1,4 +1,5 @@
 class AnimesController < ApplicationController
+  helper CharactersHelper
 
   def index
     @animes = Anime.includes(:genres).page(params[:page])

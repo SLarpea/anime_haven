@@ -3,9 +3,9 @@ class Character < ApplicationRecord
   has_one_attached :image
   belongs_to :anime
   validates :character_name, presence: true, length: {minimum: 3}
-  validates :character_description, presence: true, length: { maximum: 250,
+  validates :character_description, presence: true, length: { maximum: 500,
                                                              too_long: "%{count} characters is the maximum allowed" }
-  validates :appearance, presence: true, length: { maximum: 300,
+  validates :appearance, presence: true, length: { maximum: 500,
                                                    too_long: "%{count} characters is the maximum allowed" }
   validates :role, presence: true
   validates :avatar, attached: true, content_type: [:png, :jpg]

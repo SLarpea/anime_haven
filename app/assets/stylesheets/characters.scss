@@ -1,3 +1,38 @@
 // Place all the styles related to the characters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.character_avatar{
+  vertical-align: middle;
+  border-radius: 50%;
+  margin-left: 35px;
+  margin-top: 15px;
+}
+
+.card {
+  border-color: #CCCCCC !important;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  display: inline-block;
+  height: 150px;
+  margin: 1em;
+  position: relative;
+  width: 150px;
+}
+
+.card:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.character_name{
+  font-family: Open Sans-Serif;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.main_character_header, .side_character_header{
+  font-family: Open Sans-Serif;
+  font-size: 25px;
+}
