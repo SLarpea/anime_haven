@@ -52,7 +52,17 @@
 }
 
 .thumbnail-index{
-  width: 250px;
-  height: 455px;
+  width: 280px;
+  height: 460px;
   overflow: auto;
+}
+
+.btn-fav-anime{
+  border-color: #B00100 !important;
+  color: #B00100 !important;
+}
+
+.btn-fav-anime:hover{
+  background-color: #B00100 !important;
+  color: #EFEFEF !important;
 }

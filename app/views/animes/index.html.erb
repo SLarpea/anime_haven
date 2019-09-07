@@ -11,7 +11,9 @@
               <div class="caption">
                 <h4><%= anime.title %></h4>
                 <p><%= anime.information %></p>
-                <p><a><%= link_to 'Show More', anime_path(anime), class: "btn btn-show-anime" %></a></p>
+                <p><a><%= link_to 'Show More', anime_path(anime), class: "btn btn-show-anime" %></a> <%= link_to '<i class="glyphicon glyphicon-star"></i> Add to Favorites'.html_safe ,
+                                                                                                                 favorite_animes_path(anime), class: "btn btn-fav-anime",
+                                                                                                                 method: :post, data: {confirm: "Are you sure?"}%></p>
               </div>
             </div>
           </div>

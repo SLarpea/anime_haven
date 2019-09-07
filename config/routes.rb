@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :animes do
     resources :characters
   end
+
+  resources :favorite_animes, only: [:index,:create]
 end
