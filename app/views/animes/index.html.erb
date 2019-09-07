@@ -7,7 +7,7 @@
         <% @animes.each do |anime| %>
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail thumbnail-index">
-              <%= image_tag(anime.image.variant(resize: "300x300"), size: 300) %>
+              <%= image_tag(anime.image, size: "300x300") %>
               <div class="caption">
                 <h4><%= anime.title %></h4>
                 <p><%= anime.information %></p>

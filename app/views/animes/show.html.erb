@@ -2,9 +2,9 @@
   <div class="row">
     <h2 class="anime-header"> Anime </h2>
     <div class="anime">
-      <div class="col-md-5 col-md-4">
+      <div class="col-md-5 col-md-3">
         <div class="thumbnail">
-          <%= image_tag @anime.image %>
+          <%= image_tag(@anime.image, size: "400x400") %>
         </div>
       </div>
       <div class="anime-info">
@@ -14,7 +14,7 @@
       <div class="anime-characters">
         <div class="row">
           <div class="col-md-12">
-            <p class="character-header"> Characters
+            <p class="character-header"> <%= "Character".pluralize(@anime.characters.size) %>
               <span class="badge badge-character"><%= @anime.characters.size %></span>
               <%= link_to "insert new character", new_anime_character_path(@anime), class: "btn btn-character" %>
             </p>
