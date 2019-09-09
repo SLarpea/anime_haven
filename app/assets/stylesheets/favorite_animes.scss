@@ -4,7 +4,7 @@
 
 .favorite_animes{
   width: 100%;
-  margin: 50px;
+  margin-top: 20px;
   .fav_anime_headers, th{
     background-color: #2E2F30;
     color: #EFEFEF;
@@ -17,4 +17,14 @@
   .fav_anime_datas:hover{
     background-color: #F7F7F7;
   }
+}
+
+.btn-remove-fav{
+  border-color: red;
+  color: red;
+}
+
+.btn-remove-fav:hover{
+  background-color: red;
+  color: #EFEFEF;
 }
