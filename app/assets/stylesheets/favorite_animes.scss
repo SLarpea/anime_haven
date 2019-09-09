@@ -1,3 +1,20 @@
 // Place all the styles related to the favorite_animes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.favorite_animes{
+  width: 100%;
+  margin: 50px;
+  .fav_anime_headers, th{
+    background-color: #2E2F30;
+    color: #EFEFEF;
+    padding: 10px;
+  }
+  .fav_anime_datas, td{
+    color: #2E2F30;
+    padding: 10px;
+  }
+  .fav_anime_datas:hover{
+    background-color: #F7F7F7;
+  }
+}
