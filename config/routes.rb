@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :animes do
     resources :characters
   end
+
+  post 'favorite_animes/:anime_id', to: 'favorite_animes#create', as: 'add_favorite_anime'
 end
