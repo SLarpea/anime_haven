@@ -1,5 +1,9 @@
 class GenresController < ApplicationController
 
+  def index
+    @genres = Genre.includes(:animes).page(params[:page])
+  end
+
   def new
     @genre = Genre.new
   end
@@ -18,5 +22,12 @@ class GenresController < ApplicationController
 
   def genre_params
     params.require(:genre).permit(:genre_name, :content)
+  end
+
+  def admin_only
+    unless current_user.admin?
+      flash[:danger] = "Only admin can delete a genre"
+      redirect_to root_path
+    end
   end
 end

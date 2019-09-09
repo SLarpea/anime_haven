@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2> All Genres </h2>
+      <table class="favorite_animes">
+        <tr class="fav_anime_headers">
+          <th witdh="10%">ID</th>
+          <th width="60%">Genre</th>
+          <th width="30%">Action</th>
+        </tr>
+        <% @genres.each do |genre| %>
+          <tr class="fav_anime_datas">
+            <td><%= genre.id %></td>
+            <td><%= genre.genre_name %></td>
+            <td>
+              <%= link_to 'Show', genre_path(genre), method: :get, class: "btn btn-show-anime btn-sm" %>
+              <% if current_user.admin? %>
+                <%= link_to 'Remove Genre', genre_path(genre), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-remove-fav btn-sm" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
