@@ -8,7 +8,13 @@
         </div>
       </div>
       <div class="anime-info">
-        <p class="anime-title"> <%= @anime.title %> </p>
+        <p class="anime-title"> <%= @anime.title %>
+          <% unless current_user.favorite_animes.exists?(anime_id: @anime.id) %>
+            <%= link_to '<i class="glyphicon glyphicon-star"></i> Add to Favorites'.html_safe,
+                        add_favorite_anime_path(@anime.id), class: "btn btn-fav-anime btn-sm",
+                        method: :post, data: {confirm: "Are you sure?"} %>
+          <% end %>
+        </p>
         <p class="anime-summary"><strong>Summary:</strong> <%= @anime.information %></p>
       </div>
       <div class="anime-characters">
