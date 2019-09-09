@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2> Favorite Animes </h2>
+      <table class="favorite_animes">
+        <tr class="fav_anime_headers">
+          <th witdh="10%">ID</th>
+          <th width="60%">Anime</th>
+          <th width="30%">Action</th>
+        </tr>
+        <% @favorites.each do |favorite| %>
+        <tr class="fav_anime_datas">
+          <td><%= favorite.id %></td>
+          <td><%= favorite.anime.title %></td>
+          <td>
+            <%= link_to 'Show', anime_path(favorite.anime), method: :get, class: "btn btn-show-anime btn-sm" %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

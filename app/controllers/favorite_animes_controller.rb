@@ -1,5 +1,9 @@
 class FavoriteAnimesController < ApplicationController
 
+  def index
+    @favorites = current_user.favorite_animes.page(params[:page])
+  end
+
   def create
     @favorite = current_user.favorite_animes.build(anime_id: params[:anime_id])
     if @favorite.save
