@@ -9,7 +9,7 @@
       </div>
       <div class="anime-info">
         <p class="anime-title"> <%= @anime.title %>
-          <% unless current_user.favorite_animes.exists?(anime_id: @anime.id) %>
+          <% unless user_signed_in? && current_user.favorite_animes.exists?(anime_id: @anime.id) %>
             <%= link_to '<i class="glyphicon glyphicon-star"></i> Add to Favorites'.html_safe,
                         add_favorite_anime_path(@anime.id), class: "btn btn-fav-anime btn-sm",
                         method: :post, data: {confirm: "Are you sure?"} %>
@@ -22,7 +22,9 @@
           <div class="col-md-12">
             <p class="character-header"> <%= "Character".pluralize(@anime.characters.size) %>
               <span class="badge badge-character"><%= @anime.characters.size %></span>
+              <% if user_signed_in? && current_user.admin? %>
               <%= link_to "insert new character", new_anime_character_path(@anime), class: "btn btn-character" %>
+              <% end %>
             </p>
             <%= render 'characters/index', characters: @anime.characters %>
           </div>

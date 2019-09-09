@@ -1,4 +1,5 @@
 class AnimesController < ApplicationController
+  before_action :admin_only, only: [:new, :create]
   helper CharactersHelper
 
   def index
@@ -28,5 +29,12 @@ class AnimesController < ApplicationController
 
   def anime_params
     params.require(:anime).permit(:title, :information, genre_ids: [])
+  end
+
+  def admin_only
+    unless current_user.admin?
+      flash[:danger] = "Only admin can proceed to that action"
+      redirect_to root_path
+    end
   end
 end

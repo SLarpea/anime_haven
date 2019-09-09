@@ -1,3 +1,44 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn-login{
+  border-color: dodgerblue !important;
+  color: dodgerblue !important;
+  margin-top: 9px;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.btn-login:hover{
+  background-color: dodgerblue !important;
+  color: #EFEFEF !important;
+}
+
+.btn-signup{
+  border-color: gold !important;
+  color: gold !important;
+  margin-top: 9px;
+  margin-left: 10px;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.btn-signup:hover{
+  background-color: gold !important;
+  color: #2E2F30 !important;
+}
+
+.dropdown-toggle:hover{
+  color: greenyellow !important;
+}
+
+.anime-footer{
+  border-style: solid;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  border-top-color: #EFEFEF !important;
+  border-width: 1px !important;
+  padding: 10px;
+}
