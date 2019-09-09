@@ -13,7 +13,7 @@
                 <p><%= anime.information %></p>
                 <p>
                   <a><%= link_to 'Show More', anime_path(anime), class: "btn btn-show-anime" %></a>
-                  <% unless current_user.favorite_animes.exists?(anime_id: anime) %>
+                  <% unless user_signed_in? && current_user.favorite_animes.exists?(anime_id: anime) %>
                     <%= link_to '<i class="glyphicon glyphicon-star"></i> Add to Favorites'.html_safe,
                                 add_favorite_anime_path(anime), class: "btn btn-fav-anime",
                                 method: :post, data: {confirm: "Are you sure?"} %>
