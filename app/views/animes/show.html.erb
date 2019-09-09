@@ -15,6 +15,13 @@
                         method: :post, data: {confirm: "Are you sure?"} %>
           <% end %>
         </p>
+        <p><strong><%= "Genre".pluralize(@anime.genres.count) %></strong>:
+          <tr>
+            <% @genres.each do |genre| %>
+              <td> <%= genre.genre_name %> </td>
+            <% end %>
+          </tr>
+        </p>
         <p class="anime-summary"><strong>Summary:</strong> <%= @anime.information %></p>
       </div>
       <div class="anime-characters">
@@ -23,7 +30,7 @@
             <p class="character-header"> <%= "Character".pluralize(@anime.characters.size) %>
               <span class="badge badge-character"><%= @anime.characters.size %></span>
               <% if user_signed_in? && current_user.admin? %>
-              <%= link_to "insert new character", new_anime_character_path(@anime), class: "btn btn-character" %>
+                <%= link_to "insert new character", new_anime_character_path(@anime), class: "btn btn-character" %>
               <% end %>
             </p>
             <%= render 'characters/index', characters: @anime.characters %>

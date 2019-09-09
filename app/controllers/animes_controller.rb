@@ -8,6 +8,7 @@ class AnimesController < ApplicationController
 
   def show
     @anime = Anime.find(params[:id])
+    @genres = @anime.genres
   end
 
   def new
