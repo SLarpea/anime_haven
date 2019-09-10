@@ -1,5 +1,6 @@
 class AnimesController < ApplicationController
   before_action :admin_only, only: [:new, :create]
+  helper AnimesHelper
   helper CharactersHelper
 
   def index
@@ -8,7 +9,6 @@ class AnimesController < ApplicationController
 
   def show
     @anime = Anime.find(params[:id])
-    @genres = @anime.genres
   end
 
   def new
@@ -24,6 +24,10 @@ class AnimesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def top_favorite_animes
+    @top_favorite_animes = Anime.includes(:favorite_animes)
   end
 
   private

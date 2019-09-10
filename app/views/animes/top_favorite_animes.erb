@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2> Top Favorite Animes </h2>
+      <table class="favorite_animes">
+        <thead class="fav_anime_headers">
+        <th witdh="50%">Anime</th>
+        <th width="50%">Votes</th>
+        </thead>
+        <tbody>
+        <% @top_favorite_animes.each do |anime| %>
+          <tr class="fav_anime_datas">
+            <td> <%= anime.title %> </td>
+            <td> <%= anime.favorite_animes.size %></td>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

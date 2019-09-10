@@ -17,7 +17,7 @@
         </p>
         <p><strong><%= "Genre".pluralize(@anime.genres.count) %></strong>:
           <tr>
-            <% @genres.each do |genre| %>
+            <% genres(@anime).each do |genre| %>
               <td> <%= genre.genre_name %> </td>
             <% end %>
           </tr>

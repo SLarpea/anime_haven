@@ -3,15 +3,19 @@
     <div class="col-md-10 col-md-offset-1">
       <h2> Favorite Animes </h2>
       <table class="favorite_animes">
-        <tr class="fav_anime_headers">
-          <th witdh="10%">ID</th>
-          <% if current_user.admin? %>
-            <th width="10%">Role</th>
-            <th width="20%">Reader</th>
-          <% end %>
+        <thead class="fav_anime_headers">
+        <th witdh="10%">ID</th>
+        <% if current_user.admin? %>
+          <th width="10%">Role</th>
+          <th width="20%">Reader</th>
           <th width="30%">Anime</th>
           <th width="30%">Action</th>
-        </tr>
+        <% else %>
+          <th width="60%">Anime</th>
+          <th width="30%">Action</th>
+        <% end %>
+        </thead>
+        <tbody>
         <% @favorites.each do |favorite| %>
           <tr class="fav_anime_datas">
             <td><%= favorite.id %></td>
@@ -28,6 +32,7 @@
             </td>
           </tr>
         <% end %>
+        </tbody>
       </table>
     </div>
   </div>
