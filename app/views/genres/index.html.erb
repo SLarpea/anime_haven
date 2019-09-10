@@ -14,7 +14,7 @@
             <td><%= genre.genre_name %></td>
             <td>
               <%= link_to 'Show', genre_path(genre), method: :get, class: "btn btn-show-anime btn-sm" %>
-              <% if current_user.admin? %>
+              <% if user_signed_in? && current_user.admin? %>
                 <%= link_to 'Remove Genre', genre_path(genre), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-remove-fav btn-sm" %>
               <% end %>
             </td>

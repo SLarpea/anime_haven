@@ -3,7 +3,7 @@ class FavoriteAnimesController < ApplicationController
   before_action :current_user_only, only: [:destroy]
 
   def index
-    @favorites = current_user.favorite_animes.includes(:user, :anime).page(params[:page])
+    @favorites = current_user.admin? ? FavoriteAnime.includes(:anime).page(params[:page]) : current_user.favorite_animes.includes(:user, :anime).page(params[:page])
   end
 
   def create
@@ -35,7 +35,7 @@ class FavoriteAnimesController < ApplicationController
   end
 
   def current_user_only
-    unless current_user
+    unless current_user.id == @favorite.id
       flash[:danger] = "Only the reader can delete his own favorite anime!"
       redirect_to favorite_animes_path
     end

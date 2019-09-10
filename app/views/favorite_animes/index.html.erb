@@ -9,14 +9,16 @@
           <th width="30%">Action</th>
         </tr>
         <% @favorites.each do |favorite| %>
-        <tr class="fav_anime_datas">
-          <td><%= favorite.id %></td>
-          <td><%= favorite.anime.title %></td>
-          <td>
-            <%= link_to 'Show', anime_path(favorite.anime), method: :get, class: "btn btn-show-anime btn-sm" %>
-            <%= link_to 'Remove to Favorites', favorite_anime_path(favorite), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-remove-fav btn-sm" %>
-          </td>
-        </tr>
+          <tr class="fav_anime_datas">
+            <td><%= favorite.id %></td>
+            <td><%= favorite.anime.title %></td>
+            <td>
+                <%= link_to 'Show', anime_path(favorite.anime), method: :get, class: "btn btn-show-anime btn-sm" %>
+              <% if current_user.id == favorite.user.id %>
+                <%= link_to 'Remove to Favorites', favorite_anime_path(favorite), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-remove-fav btn-sm" %>
+              <% end %>
+            </td>
+          </tr>
         <% end %>
       </table>
     </div>
