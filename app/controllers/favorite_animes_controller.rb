@@ -3,7 +3,7 @@ class FavoriteAnimesController < ApplicationController
   before_action :current_user_only, only: [:destroy]
 
   def index
-    @favorites = current_user.admin? ? FavoriteAnime.includes(:anime).page(params[:page]) : current_user.favorite_animes.includes(:user, :anime).page(params[:page])
+    @favorites = current_user.admin? ? FavoriteAnime.includes(:anime,:user).page(params[:page]) : current_user.favorite_animes.includes(:user, :anime).page(params[:page])
   end
 
   def create

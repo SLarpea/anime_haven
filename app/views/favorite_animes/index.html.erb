@@ -5,15 +5,23 @@
       <table class="favorite_animes">
         <tr class="fav_anime_headers">
           <th witdh="10%">ID</th>
-          <th width="60%">Anime</th>
+          <% if current_user.admin? %>
+            <th width="10%">Role</th>
+            <th width="20%">Reader</th>
+          <% end %>
+          <th width="30%">Anime</th>
           <th width="30%">Action</th>
         </tr>
         <% @favorites.each do |favorite| %>
           <tr class="fav_anime_datas">
             <td><%= favorite.id %></td>
+            <% if current_user.admin? %>
+              <td><%= favorite.user.role %></td>
+              <td><%= favorite.user.email %></td>
+            <% end %>
             <td><%= favorite.anime.title %></td>
             <td>
-                <%= link_to 'Show', anime_path(favorite.anime), method: :get, class: "btn btn-show-anime btn-sm" %>
+              <%= link_to 'Show', anime_path(favorite.anime), method: :get, class: "btn btn-show-anime btn-sm" %>
               <% if current_user.id == favorite.user.id %>
                 <%= link_to 'Remove to Favorites', favorite_anime_path(favorite), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-remove-fav btn-sm" %>
               <% end %>
