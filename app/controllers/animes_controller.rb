@@ -1,6 +1,6 @@
 class AnimesController < ApplicationController
+  before_action :authenticate_user!
   before_action :admin_only, only: [:new, :create]
-  helper AnimesHelper
   helper CharactersHelper
 
   def index
